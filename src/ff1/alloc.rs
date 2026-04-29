@@ -171,7 +171,7 @@ impl BinaryNumeralString {
         BinaryNumeralString(s.to_vec())
     }
 
-    /// Returns a Vec<u8>, with each byte written from the BinaryNumeralString
+    /// Returns a Vec, with each byte written from the BinaryNumeralString
     /// in little-endian bit order.
     pub fn to_bytes_le(&self) -> Vec<u8> {
         self.0.to_vec()
