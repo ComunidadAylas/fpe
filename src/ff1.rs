@@ -64,7 +64,7 @@ impl Radix {
             let log_radix = 31 - radix.leading_zeros();
             Radix::PowerTwo {
                 radix,
-                min_len: cmp::max((MIN_RADIX_2_NS_LEN + log_radix - 1) / log_radix, MIN_NS_LEN),
+                min_len: cmp::max(MIN_RADIX_2_NS_LEN.div_ceil(log_radix), MIN_NS_LEN),
                 log_radix: u8::try_from(log_radix).unwrap(),
             }
         } else {
